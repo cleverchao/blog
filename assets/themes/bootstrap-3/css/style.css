@@ -77,3 +77,34 @@ h1, h2, h3, h4 {
   background: #57A957;
   border: 1px solid #4c964d;
   color: #FFF; }
+
+li.rencent_post{
+  list-style: none;
+  padding: 15px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.rencent_post .post{
+  font-size: 20px;
+}
+
+.rencent_post .post_content{
+  padding-left: 40px;
+  height: 200px;
+  overflow: hidden;
+  background-color: #eee;
+}
+
+.rencent_post .post_content.expanded{
+  height: inherit;
+}
+
+.posts{
+  padding-left: 0;
+}
+
+.expand{
+  padding-left: 40px;
+  background-color: #eee;
+  cursor: pointer;
+}
