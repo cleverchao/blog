@@ -29,4 +29,4 @@ github可以为每一个项目单独创建项目的主页，用来描述项目�
 
 *	进入项目的settings界面，通过automatic page generator来一步一步创建界面
 *	直接上传html
-*	[使用jekyll创建blog](/2015/02/27/build-blog-with-jekyll/)
+*	[使用jekyll创建blog](/blog/2015/02/27/build-blog-with-jekyll/)
