@@ -15,7 +15,7 @@ github可以创建一个个人主页，主页的访问路径是username.github.i
 
 *	个人主页需要创建一个新的git库，名称是username.github.io
 *	把需要展示的页面上传到此库的master分支
-
+ 
 ## 项目主页
 
 github可以为每一个项目单独创建项目的主页，用来描述项目相关的信息，项目主页的访问路径是username.github.io/project-name。具体步骤如下：
