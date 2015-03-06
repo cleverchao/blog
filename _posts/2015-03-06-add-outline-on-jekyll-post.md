@@ -21,8 +21,8 @@ tags: [Jekyll, 目录, 大纲]
 	layout: post
 	title: "add outline on jekyll post"
 	description: ""
-	category: github.io
-	tags: [Jekyll, 目录, 大纲]
+	category:
+	tags: []
 	---
 	{% include JB/setup %}
 	*  目录
@@ -46,7 +46,7 @@ tags: [Jekyll, 目录, 大纲]
 
 找到以下代码：
 
-```ruby
+{% highlight ruby %}
 
 task :post do
   abort("rake aborted: '#{CONFIG['posts']}' directory not found.") unless FileTest.directory?(CONFIG['posts'])
@@ -75,9 +75,11 @@ task :post do
     post.puts "category: #{category}"
     post.puts "tags: #{tags}"
     post.puts "---"
-    post.puts "{% include JB/setup %}"
-    post.puts "{% include ext/toc %}"
+    post.puts "{\% include JB/setup \%}"
+    post.puts "{\% include ext/toc \%}" ###########这一行是添加的代码（\是为了转义，需要去掉）############
   end
-end # task :post
+end # task :post 
 
-```
+{% endhighlight %}
+
+修改代码之后，每次rake post的时候就可以自动给文章加目录了。
