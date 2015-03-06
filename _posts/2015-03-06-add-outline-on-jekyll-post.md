@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "add outline on jekyll post"
+title: "给Jekyll的文章添加目录"
 description: ""
 category: github.io
 tags: [Jekyll, 目录, 大纲]
