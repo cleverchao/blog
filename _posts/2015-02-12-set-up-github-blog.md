@@ -2,8 +2,8 @@
 layout: post
 title: "Set up github page on github.io"
 description: ""
-category: web_site
-tags: [github.io github主页]
+category: github.io
+tags: [github.io,github主页]
 ---
 {% include JB/setup %}
 

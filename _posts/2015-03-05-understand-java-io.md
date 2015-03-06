@@ -2,10 +2,11 @@
 layout: post
 title: "Understand Java IO"
 description: ""
-category: 
-tags: []
+category: java
+tags: [java,io]
 ---
 {% include JB/setup %}
+{% include ext/toc %}
 
 ##	InputStream/OutputStream && Reader/Writer
 
