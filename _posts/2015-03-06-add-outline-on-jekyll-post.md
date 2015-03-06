@@ -1,0 +1,83 @@
+---
+layout: post
+title: "add outline on jekyll post"
+description: ""
+category: github.io
+tags: [Jekyll, 目录, 大纲]
+---
+{% include JB/setup %}
+{% include ext/toc %}
+
+#	添加目录
+
+在Jekyll里面给文章添加目录非常容易，只需要在文章开头添加如下代码即可<span id="code"></span>
+
+	*  目录
+	{:toc}
+
+一个完整示例是：
+
+	---
+	layout: post
+	title: "add outline on jekyll post"
+	description: ""
+	category: github.io
+	tags: [Jekyll, 目录, 大纲]
+	---
+	{% include JB/setup %}
+	*  目录
+	{:toc}
+	#	一级标题
+	##	二级标题
+	##	二级标题
+
+这样就可以显示出目录了。
+
+#	自动添加目录
+
+每次都手动添加目录比较麻烦，最好是每次创建新文章的时候都能自动加上。
+
+##	改成引入的方式
+
+直接写[代码](#code)的话，如果之后想要调整目录，非常麻烦，所以我们使用include的方式引入目录的代码。
+我们在_includes目录下面新建一个ext目录，然后创建一个文件：toc, 然后把[代码](#code)写到toc里面，保存即可。
+
+##	修改Rakefile
+
+找到以下代码：
+
+```ruby
+
+task :post do
+  abort("rake aborted: '#{CONFIG['posts']}' directory not found.") unless FileTest.directory?(CONFIG['posts'])
+  title = ENV["title"] || "new-post"
+  tags = ENV["tags"] || "[]"
+  category = ENV["category"] || ""
+  category = "\"#{category.gsub(/-/,' ')}\"" if !category.empty?
+  slug = title.downcase.strip.gsub(' ', '-').gsub(/[^\w-]/, '')
+  begin
+    date = (ENV['date'] ? Time.parse(ENV['date']) : Time.now).strftime('%Y-%m-%d')
+  rescue => e
+    puts "Error - date format must be YYYY-MM-DD, please check you typed it correctly!"
+    exit -1
+  end
+  filename = File.join(CONFIG['posts'], "#{date}-#{slug}.#{CONFIG['post_ext']}")
+  if File.exist?(filename)
+    abort("rake aborted!") if ask("#{filename} already exists. Do you want to overwrite?", ['y', 'n']) == 'n'
+  end
+  
+  puts "Creating new post: #{filename}"
+  open(filename, 'w') do |post|
+    post.puts "---"
+    post.puts "layout: post"
+    post.puts "title: \"#{title.gsub(/-/,' ')}\""
+    post.puts 'description: ""'
+    post.puts "category: #{category}"
+    post.puts "tags: #{tags}"
+    post.puts "---"
+    post.puts "{% include JB/setup %}"
+    post.puts "{% include ext/toc %}"
+  end
+end # task :post
+
+```
