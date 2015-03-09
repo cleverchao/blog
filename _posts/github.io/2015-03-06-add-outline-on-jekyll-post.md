@@ -32,6 +32,9 @@ tags: [Jekyll, 目录, 大纲]
 	##	二级标题
 
 这样就可以显示出目录了。
+如果要把某标题从目录树中排除，则在该标题的下一行写上 {:.no_toc}
+目录深度可以通过 config.yml 文件中添加 toc_levels 选项来定制，默认为 1..6，表示标题一至标题六全部渲染
+{:toc} 默认生成的目录列表会添加 id 值 markdown-toc，我们可以自定义 id 值，比如 {:toc #cleverchao}，生成的目录列表添加的 id 将会是 cleverchao。
 
 #	自动添加目录
 
