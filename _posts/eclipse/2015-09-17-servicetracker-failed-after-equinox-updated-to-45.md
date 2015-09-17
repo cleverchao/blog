@@ -16,7 +16,10 @@ equinox从3.7.2升级到4.5之后，之前通过HttpService.registerServlet（�
 
 经过调试，发现主要是org.eclipse.equinox.http.servlet插件中解析路径匹配的算法发生了变化，目前的解析算法为HttpServiceRuntimeImpl类的如下方法。
 
+
 ```java
+
+
 private boolean doDispatch(
 			HttpServletRequest request, HttpServletResponse response,
 			String path, RequestInfoDTO requestInfoDTO)
@@ -56,6 +59,8 @@ private boolean doDispatch(
 
 	return false;
 }
+
+
 ```
 
 从代码上可以看出尝试了四种匹配方式
