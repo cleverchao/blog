@@ -10,7 +10,7 @@ tags: [jquery]
 
 
 when I try to add script tags into head tag using jquery, found that jquery add script tags twice like this:
-
+{%raw%}
 ``` HTML
 <head>
 	<meta charset="UTF-8">
@@ -32,7 +32,7 @@ when I try to add script tags into head tag using jquery, found that jquery add 
 </head>
 
 ```
-
+{%endraw%}
 it add every script tag twice!
 
 Then I found it was this code is the reason : 
