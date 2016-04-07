@@ -12,7 +12,24 @@ tags: [jquery]
 when I try to add script tags into head tag using jquery, found that jquery add script tags twice like this:
 
 ``` HTML
-
+<head>
+	<meta charset="UTF-8">
+	<link href="/engine/thr/bootstrap3.3.6/bootstrap.css" rel="stylesheet">
+	<link rel="stylesheet" href="/demopage/test/global.css">
+	<script src="/engine/thr/jquery2.2.0/jquery.js"></script>
+	<script src="/engine/thr/async/async.js"></script>
+	<script src="/engine/thr/react0.14.7/react.js"></script>
+	<script src="/engine/thr/react0.14.7/react-dom.js"></script>
+	<script src="/engine/thr/bootstrap3.3.6/bootstrap.js"></script>
+	<script src="/engine/engine.js"></script>
+	<link href="/democomp/main.css" rel="stylesheet">
+	<script src="/engine/thr/jquery2.2.0/jquery.js?_=1459997605352"></script>
+	<script src="/engine/thr/async/async.js?_=1459997605353"></script>
+	<script src="/engine/thr/react0.14.7/react.js?_=1459997605354"></script>
+	<script src="/engine/thr/react0.14.7/react-dom.js?_=1459997605355"></script>
+	<script src="/engine/thr/bootstrap3.3.6/bootstrap.js?_=1459997605356"></script>
+	<script src="/engine/engine.js?_=1459997605357"></script>
+</head>
 
 ```
 
